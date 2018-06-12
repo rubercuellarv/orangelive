@@ -1,7 +1,7 @@
 Feature: Employee
 
+  @login
   Scenario: Create employee
-    Given I login with my crendetials
     When I click on PIM
     And I click on AddEmployee tab
     And Insert the data for new employee:
@@ -14,4 +14,3 @@ Feature: Employee
       | Employee Name | Purple Hrm Automation |
     And I click on Search button
     Then Verify "Purple Hrm" is displayed
-

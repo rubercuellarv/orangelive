@@ -1,10 +1,8 @@
 package orangelive.stepsdefinitions.common;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-
+/**
+ * Common steps class.
+ */
 public class CommonSteps {
-
-
 
 }

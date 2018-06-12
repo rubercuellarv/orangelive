@@ -1,59 +1,90 @@
 package orangelive.stepsdefinitions.employee;
 
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import orangelive.selenium.pages.Home;
+import orangelive.selenium.pages.pim.AddEmployee;
+import orangelive.selenium.pages.pim.EmployeeList;
+import java.util.Map;
 
-import javax.xml.bind.SchemaOutputResolver;
 
+/**
+ * Employee Steps.
+ */
 public class EmployeeSteps {
 
-    @Given("^I login with my crendetials$")
-    public void iLoginWithMyCrendetials() {
-        System.out.println("test");
+    private Home home;
+    private EmployeeList employeeList;
+    private AddEmployee addEmployee;
+
+    /**
+     * Cons.
+     * @param home Home Page.
+     * @param addEmployee addEmployee page.
+     */
+    public EmployeeSteps(final Home home, final AddEmployee addEmployee) {
+        this.home = home;
+        this.employeeList = new EmployeeList();
+        this.addEmployee = addEmployee;
     }
 
+    /**
+     * Test.
+     */
     @When("^I click on PIM$")
     public void iClickOnPIM() {
-        System.out.println("test");
+        home.clickPim();
     }
 
+    /**
+     * Test.
+     */
     @And("^I click on AddEmployee tab$")
     public void iClickOnAddEmployeeTab() {
-        System.out.println("test");
+        employeeList.clickOnLinkAddEmployee();
     }
 
 
+    /**
+     * Test.
+     * @param employee doc.
+     */
     @And("^Insert the data for new employee:$")
-    public void insertTheDataForNewEmployee() {
-        System.out.println("test");
+    public void insertTheDataForNewEmployee(final Map<String, String> employee) {
+        addEmployee.fillEmployee(employee);
     }
 
+    /**
+     * Test.
+     */
     @And("^I click on Save button$")
     public void iClickOnSaveButton() {
-        System.out.println("test");
+        addEmployee.clickSaveButton();
     }
 
+    /**
+     * Test.
+     */
     @And("^I click on Employee List tab$")
-    public void iClickOnEmployeeListTab() {
-        System.out.println("Test");
+    public void iClickOnEmployeeList()  {
+        employeeList.clickOnLinkEmployeeList();
     }
 
+    /**
+     * Test.
+     * @param employeeToSearch test.
+     */
     @And("^I insert the data for search employee:$")
-    public void iInsertTheDataForSearchEmployee() {
-        System.out.println("test");
+    public void insertTheDataForSearchEmployee(final Map<String, String> employeeToSearch) {
+        employeeList.fillSearch(employeeToSearch);
     }
 
+    /**
+     * Test.
+     */
     @And("^I click on Search button$")
     public void iClickOnSearchButton() {
-        System.out.println("test");
+        employeeList.clickOnSearchBtn();
     }
 
-    @Then("^Verify \"([^\"]*)\" is displayed$")
-    public void verifyIsDisplayed(String arg0) {
-        System.out.println("test");
-    }
 }

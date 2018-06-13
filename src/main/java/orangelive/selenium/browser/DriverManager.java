@@ -6,6 +6,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Documentation.
+ */
 public final class DriverManager {
     private static final Environment ENVIRONMENT = Environment.getInstance();
     private static DriverManager instance;

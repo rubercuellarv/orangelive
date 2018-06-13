@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Documentation.
+ */
 public final class BrowserFactory {
 
     private static final String BROWSER_NOT_FOUND = "Browser not found.";

@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'checkstyle'
 
 group 'demo.orangelive.com'
 version '1.0-SNAPSHOT'

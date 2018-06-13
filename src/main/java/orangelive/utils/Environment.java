@@ -5,8 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Environment {
-    public static final String BASE_URL = "singInUrl";
+/**
+ * Environment class.
+ */
+public final class Environment {
+    private static final String BASE_URL = "singInUrl";
     private static final String TIMEOUT = "timeout";
     private static final String AUTHENTICATION_BROWSER = "browser";
     private static final String USERNAME = "username";
